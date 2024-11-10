@@ -1,0 +1,38 @@
+#include <iostream>
+
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; ++i) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+void bubbleSortReverse(int arr[], int size) {
+    for (int i = 0; i < size - 1; ++i) {
+        for (int j = 0; j < size - 1 - i; ++j) {
+            // Сравниваем текущий элемент с следующим
+            if (arr[j] > arr[j + 1]) {
+                // Меняем местами, если текущий элемент больше следующего
+                std::swap(arr[j], arr[j + 1]);
+            }
+        }
+    }
+}
+
+int main() {
+    const int size = 10; // размер массива
+    int numbers[size] = {34, 12, 5, 67, 22, 90, 11, 47, 3, 25}; // Инициализируем массив
+
+    // Вывод массива до сортировки
+    std::cout << "Массив до сортировки: ";
+    printArray(numbers, size);
+
+    // Сортировка массива в обратном порядке (по возрастанию в обычной пузырьковой сортировке)
+    bubbleSortReverse(numbers, size);
+
+    // Вывод массива после сортировки
+    std::cout << "Массив после сортировки: ";
+    printArray(numbers, size);
+
+    return 0;
+}
