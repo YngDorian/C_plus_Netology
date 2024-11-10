@@ -1,0 +1,32 @@
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+
+int main() {
+    // Укажите путь к вашему файлу
+    const std::string filename = "example.txt"; // Замените на ваше имя файла
+    std::ifstream file(filename); // Открываем файл
+
+    // Проверка, успешно ли открыт файл
+    if (!file.is_open()) {
+        std::cerr << "Не удалось открыть файл: " << filename << std::endl;
+        return 1; // Завершаем программу с кодом ошибки
+    }
+
+    std::string line;
+
+    // Читаем файл построчно
+    while (std::getline(file, line)) {
+        std::istringstream stream(line); // Создаем поток для разбора строки
+        std::string word;
+
+        // Извлекаем каждое слово из строки
+        while (stream >> word) {
+            std::cout << word << std::endl; // Выводим слово на отдельной строке
+        }
+    }
+
+    file.close(); // Закрываем файл
+    return 0;
+}
