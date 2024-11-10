@@ -1,0 +1,46 @@
+#include <iostream>
+
+// Функция для сложения
+int calc(int x, int y) {
+    return x + y;
+}
+
+// Функция для вычитания
+int calc_sub(int x, int y) {
+    return x - y;
+}
+
+// Функция для умножения
+int calc_mult(int x, int y) {
+    return x * y;
+}
+
+// Функция для деления
+int calc_div(int x, int y) {
+    if (y != 0) {
+        return x / y; // Делим, если делитель не равен нулю
+    } else {
+        std::cerr << "Ошибка: Деление на ноль!" << std::endl;
+        return 0; // Возвращаем 0 в случае деления на ноль
+    }
+}
+
+int main() {
+    int a = 10, b = 5;
+
+    std::cout << "Первое число: " << a << ", Второе число: " << b << std::endl;
+
+    // Сложение
+    std::cout << a << " + " << b << " = " << calc(a, b) << std::endl;
+
+    // Вычитание
+    std::cout << a << " - " << b << " = " << calc_sub(a, b) << std::endl;
+
+    // Умножение
+    std::cout << a << " * " << b << " = " << calc_mult(a, b) << std::endl;
+
+    // Деление
+    std::cout << a << " / " << b << " = " << calc_div(a, b) << std::endl;
+
+    return 0;
+}
