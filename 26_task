@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string> // Для работы с типом string
+
+int main() {
+    std::string firstName; // Переменная для имени
+    std::string lastName;  // Переменная для фамилии
+
+    // Запрашиваем у пользователя имя и фамилию
+    std::cout << "Введите ваше имя: ";
+    std::getline(std::cin, firstName); // Используем getline, чтобы считать имя с пробелами
+
+    std::cout << "Введите вашу фамилию: ";
+    std::getline(std::cin, lastName); // Считываем фамилию
+
+    // Приветствуем пользователя
+    std::cout << "Здравствуйте, " << firstName << " " << lastName << "!" << std::endl;
+
+    return 0;
+}
