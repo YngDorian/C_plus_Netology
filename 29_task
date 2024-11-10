@@ -1,0 +1,39 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+
+int main() {
+    std::ifstream inputFile("in.txt");  // Открываем файл in.txt
+
+    // Проверяем, успешно ли открыт файл
+    if (!inputFile.is_open()) {
+        std::cerr << "Не удалось открыть файл." << std::endl;
+        return 1; // Завершаем программу с кодом ошибки
+    }
+
+    int size;
+
+    // Считываем первый элемент, который представляет количество элементов массива
+    inputFile >> size;
+
+    std::vector<int> numbers(size); // Создаем вектор для хранения массива
+
+    // Считываем массив целых чисел
+    for (int i = 0; i < size; ++i) {
+        inputFile >> numbers[i];
+    }
+
+    inputFile.close(); // Закрываем файл
+
+    // Выводим массив в обратном порядке
+    std::cout << "Вывод в обратном порядке: ";
+    for (int i = size - 1; i >= 0; --i) {
+        std::cout << numbers[i];
+        if (i > 0) {
+            std::cout << " "; // Добавляем пробел между числами при выводе
+        }
+    }
+    std::cout << std::endl; // Переход на новую строку
+
+    return 0; // Завершаем программу
+}
