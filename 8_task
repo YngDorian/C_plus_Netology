@@ -1,0 +1,18 @@
+#include <iostream>
+
+int main() {
+    int number;
+
+    // Запрашиваем у пользователя целое число
+    std::cout << "Введите целое число: ";
+    std::cin >> number;
+
+    // Вывод таблицы умножения для введенного числа
+    std::cout << "Таблица умножения для числа " << number << ":" << std::endl;
+
+    for (int i = 1; i <= 10; ++i) {
+        std::cout << number << " * " << i << " = " << number * i << std::endl;
+    }
+
+    return 0;
+}
