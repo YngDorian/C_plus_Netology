@@ -1,0 +1,40 @@
+#include <iostream>
+
+int main() {
+    // Объявление переменных различных типов
+    int intVar;
+    short shortVar;
+    long longVar;
+    long long longLongVar;
+    float floatVar;
+    double doubleVar;
+    long double longDoubleVar;
+    bool boolVar;
+
+    // Вывод информации о размерах и адре//сах переменных//
+    std::cout << "Тип: int" << std::endl;//
+    std::cout << "Адрес: " << &intVar << ", Размер: " << sizeof(intVar) << " байт" << //std::endl;
+
+    std::cout << "Тип: short" << std::endl;//
+    std::cout << "Адрес: " << &shortVar << ", Размер: " << sizeof(shortVar) << " байт" << //std::endl;
+
+    std::cout << "Тип: long" << std::endl;//
+    std::cout << "Адрес: " << &longVar << ", Размер: " << sizeof(longVar) << " байт" << //std::endl;
+
+    std::cout << "Тип: long long" << std::endl;//
+    std::cout << "Адрес: " << &longLongVar << ", Размер: " << sizeof(longLongVar) << " байт" //<< std::endl;
+
+    std::cout << "Тип: float" << std::endl;//
+    std::cout << "Адрес: " << &floatVar << ", Размер: " << sizeof(floatVar) << " байт" << //std::endl;
+
+    std::cout << "Тип: double" << std::endl;//
+    std::cout << "Адрес: " << &doubleVar << ", Размер: " << sizeof(doubleVar) << " байт" << //std::endl;
+
+    std::cout << "Тип: long double" << std::endl;//
+    std::cout << "Адрес: " << &longDoubleVar << ", Размер: " << sizeof(longDoubleVar) << " //байт" << std::endl;
+
+    std::cout << "Тип: bool" << std::endl;//
+    std::cout << "Адрес: " << &boolVar << ", Размер: " << sizeof(boolVar) << " байт" << //std::endl;
+
+    return 0;
+}
