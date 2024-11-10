@@ -1,0 +1,38 @@
+#include <iostream>
+
+// Функция для разворачивания массива
+void reverse(int* arr, int size) {
+    for (int i = 0; i < size / 2; ++i) {
+        // Обмен значениями между arr[i] и arr[size - 1 - i]
+        int temp = arr[i];
+        arr[i] = arr[size - 1 - i];
+        arr[size - 1 - i] = temp;
+    }
+}
+
+ Функция для вывода массива
+void printArray(const int* arr, int size) {
+    for (int i = 0; i < size; ++i) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl; // Переход на новую строку после вывода
+}
+
+int main() {
+    // Пример массива
+    int array[] = {1, 2, 3, 4, 5};
+    int size = sizeof(array) / sizeof(array[0]); // Определяем размер массива
+
+    // Вывод массива до реверсирования
+    std::cout << "Массив до реверсирования: ";
+    printArray(array, size);
+
+    // Вызываем функцию для реверсирования массива
+    reverse(array, size);
+
+    // Вывод массива после реверсирования
+    std::cout << "Массив после реверсирования: ";
+    printArray(array, size);
+
+    return 0;
+}
