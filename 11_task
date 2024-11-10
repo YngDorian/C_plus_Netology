@@ -1,0 +1,50 @@
+#include <iostream>
+
+int main() {
+    const int rows = 3; // Количество строк
+    const int cols = 6; // Количество колонок
+
+    // Инициализация двумерного массива
+    int numbers[rows][cols] = {
+        {12, 45, 23, 56, 78, 9},
+        {34, 67, 1, 90, 4, 25},
+        {100, 55, 2, 8, 0, -1}
+    };
+
+    // Вывод элементов массива в виде таблички
+    std::cout << "Элементы массива:\n";
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            std::cout << numbers[i][j] << "\t"; // Вывод с табуляцией
+        }
+        std::cout << std::endl; // Переход на новую строку после каждой строки массива
+    }
+
+    // Инициализация переменных для минимального и максимального элементов
+    int min = numbers[0][0];
+    int max = numbers[0][0];
+    int minIndexRow = 0, minIndexCol = 0;
+    int maxIndexRow = 0, maxIndexCol = 0;
+
+    // Поиск минимального и максимального элементов
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            if (numbers[i][j] < min) {
+                min = numbers[i][j]; // Находим минимальный элемент
+                minIndexRow = i;
+                minIndexCol = j;
+            }
+            if (numbers[i][j] > max) {
+                max = numbers[i][j]; // Находим максимальный элемент
+                maxIndexRow = i;
+                maxIndexCol = j;
+            }
+        }
+    }
+
+    // Вывод результатов//
+    std::cout << "Минимальный эле//мент: " << min << " (Индекс: [" << minIndexRow << "][" << //minIndexCol << "])" << std::endl;//
+    std::cout << "Максимальный элемент: " << max << " (Индекс: [" << maxIndexRow << "][" << //maxIndexCol << "])" << std::endl;
+
+    return 0;
+}
