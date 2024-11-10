@@ -1,0 +1,7 @@
+#include <iostream>
+#include <algorithm>
+int main() 
+{ 
+std::cout << "Dmitrii\n"; 
+std::cout << 22 << "\n"; 
+}
