@@ -1,0 +1,32 @@
+#include <iostream>
+
+// Функция для вывода массива
+void print(const int* arr, int size) {
+    std::cout << "[";
+    for (int i = 0; i < size; i++) {
+        std::cout << arr[i];
+        if (i < size - 1) {
+            std::cout << ", "; // Вывод запятой между элементами
+        }
+    }
+    std::cout << "]" << std::endl; // Закрывающая скобка
+}
+
+int main() {
+    // Создание массивов разного размера
+    int array1[] = {1, 2, 3, 4, 5};
+    int array2[] = {10, 20, 30};
+    int array3[] = {100, 200, 300, 400, 500, 600, 700};
+
+    // Вывод массивов
+    std::cout << "Array 1: ";
+    print(array1, sizeof(array1) / sizeof(array1[0]));  // Размер массива 1
+
+    std::cout << "Array 2: ";
+    print(array2, sizeof(array2) / sizeof(array2[0]));  // Размер массива 2
+
+    std::cout << "Array 3: ";
+    print(array3, sizeof(array3) / sizeof(array3[0]));  // Размер массива 3
+
+    return 0;
+}
