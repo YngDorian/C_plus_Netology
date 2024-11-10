@@ -1,0 +1,15 @@
+#include <iostream>
+
+// Функция, которая отслеживает количество вызовов
+void counting_function() {
+    static int count = 0; // Инициализируем статическую переменную
+    count++;              // Увеличиваем счетчик
+    std::cout << "Вызов функции: " << count << std::endl; // Выводим текущее значение счетчика
+}
+
+int main(int argc, char** argv) {
+    for (int i = 0; i < 15; i++) {
+        counting_function(); // Вызываем функцию 15 раз
+    }
+    return 0;
+}
