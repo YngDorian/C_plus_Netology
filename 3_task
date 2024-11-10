@@ -1,0 +1,13 @@
+std::cout << "A\t     B\t    A && B\tA || B\n";
+std::cout << "----------------------------\n";
+// Перебираем все возможные комбинации A и B
+for (bool A : {true, false}) {
+    for (bool B : {true, false}) {
+        // Выводим значения A и B
+        std::cout << (A ? "true" : "false") << "\t"
+                  << (B ? "true" : "false") << "\t"
+                  << ((A && B) ? "true" : "false") << "\t"
+                  << ((A || B) ? "true" : "false") << "\n";
+    }
+}
+return 0;
